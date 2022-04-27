@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -17,13 +18,13 @@ const CongratulationsScreen = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Organizers')}>
-        <Icon
-          name="arrow-left"
+        <Icons
+          name="arrow-back"
           size={30}
           style={{
             color: 'white',
             padding: 20,
-          }}></Icon>
+          }}></Icons>
       </TouchableOpacity>
       <Text style={styles.login}>Congratulation!</Text>
       <Text style={styles.txt}>

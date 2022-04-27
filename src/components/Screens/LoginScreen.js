@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -17,13 +18,13 @@ const LoginScreen = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
-        <Icon
-          name="arrow-left"
+        <Icons
+          name="arrow-back"
           size={30}
           style={{
             color: 'white',
             padding: 20,
-          }}></Icon>
+          }}></Icons>
       </TouchableOpacity>
       <Text style={styles.login}>Log in</Text>
       <Text style={styles.txt}>
@@ -43,6 +44,8 @@ const LoginScreen = props => {
           placeholder={'Password'}
           placeholderTextColor="#637381"
           fontFamily="Public Sans"
+          secureTextEntry={true}
+          color="white"
         />
       </View>
 

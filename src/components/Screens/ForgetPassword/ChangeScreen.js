@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -18,7 +18,7 @@ const ChangeScreen = props => {
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Code')}>
         <Icon
-          name="arrow-left"
+          name="arrow-back"
           size={30}
           style={{
             color: 'white',
@@ -29,20 +29,44 @@ const ChangeScreen = props => {
       <Text style={styles.txt}>
         Enter and confirm your new {'\n'} password.
       </Text>
-      <View>
+      <View style={styles.new}>
         <TextInput
-          style={styles.input}
+          style={{flex: 1}}
           placeholder={'New password'}
           placeholderTextColor="#637381"
           fontFamily="Public Sans"
           color="white"
+          secureTextEntry={true}
         />
+        <Icon
+          name="md-eye"
+          size={25}
+          style={{
+            color: 'white',
+            alignSelf: 'center',
+            paddingLeft: 15,
+            paddingRight: 15,
+          }}
+        />
+      </View>
+      <View style={styles.new}>
         <TextInput
-          style={styles.input}
+          style={{flex: 1}}
           placeholder={'Re-enter new password'}
           placeholderTextColor="#637381"
           fontFamily="Public Sans"
           color="white"
+          secureTextEntry={true}
+        />
+        <Icon
+          name="md-eye"
+          size={25}
+          style={{
+            color: 'white',
+            alignSelf: 'center',
+            paddingLeft: 15,
+            paddingRight: 15,
+          }}
         />
       </View>
 
@@ -100,6 +124,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 7,
+  },
+  new: {
+    borderColor: '#637381',
+    borderWidth: 1,
+    marginHorizontal: 10,
+    borderRadius: 7,
+    margin: 7,
+    paddingLeft: 10,
+    flexDirection: 'row',
   },
 });
 export default ChangeScreen;

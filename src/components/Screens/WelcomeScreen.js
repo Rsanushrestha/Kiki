@@ -8,12 +8,14 @@ import {
   TextInput,
 } from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const WelcomeScreen = props => {
-  const {navigation} = props;
+  // const {navigation} = props;
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View>

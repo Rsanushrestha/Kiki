@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -17,13 +18,13 @@ const LocationScreen = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-        <Icon
-          name="arrow-left"
+        <Icons
+          name="arrow-back"
           size={30}
           style={{
             color: 'white',
             padding: 20,
-          }}></Icon>
+          }}></Icons>
         <Text style={{color: '#00AB55', left: 18}}>Step 1/4</Text>
       </TouchableOpacity>
       <Text style={styles.login}>Select your {'\n'}Location</Text>
@@ -32,13 +33,28 @@ const LocationScreen = props => {
         near you.
       </Text>
       <View>
-        <TextInput
-          style={styles.input}
-          placeholder={'Your location'}
-          placeholderTextColor="#637381"
-          fontFamily="Public Sans"
-          color="white"
-        />
+        <View style={styles.loc}>
+          <TextInput
+            style={{
+              flex: 1,
+            }}
+            placeholder={'Location'}
+            placeholderTextColor="#637381"
+            fontFamily="Public Sans"
+            color="white"
+            // inlineImageLeft="calendar"
+          />
+          <Icon
+            name="map-marker"
+            size={25}
+            style={{
+              color: 'white',
+              alignSelf: 'center',
+              paddingLeft: 15,
+              paddingRight: 15,
+            }}
+          />
+        </View>
       </View>
 
       <TouchableOpacity
@@ -95,6 +111,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 7,
+  },
+  loc: {
+    borderColor: '#637381',
+    borderWidth: 1,
+    marginHorizontal: 10,
+    borderRadius: 7,
+    margin: 7,
+    paddingLeft: 10,
+    flexDirection: 'row',
   },
 });
 export default LocationScreen;

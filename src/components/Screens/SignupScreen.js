@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -17,13 +18,13 @@ const SignupScreen = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
-        <Icon
-          name="arrow-left"
+        <Icons
+          name="arrow-back"
           size={30}
           style={{
             color: 'white',
             padding: 20,
-          }}></Icon>
+          }}></Icons>
       </TouchableOpacity>
       <Text style={styles.signup}>Sign up</Text>
       <Text style={styles.txt}>
@@ -44,13 +45,28 @@ const SignupScreen = props => {
           fontFamily="Public Sans"
           color="white"
         />
-        <TextInput
-          style={styles.input}
-          placeholder={'Date of birth'}
-          placeholderTextColor="white"
-          fontFamily="Public Sans"
-          color="white"
-        />
+        <View style={styles.DOB}>
+          <TextInput
+            style={{
+              flex: 1,
+            }}
+            placeholder={'Date of birth'}
+            placeholderTextColor="white"
+            fontFamily="Public Sans"
+            color="white"
+            // inlineImageLeft="calendar"
+          />
+          <Icon
+            name="calendar"
+            size={25}
+            style={{
+              color: 'white',
+              alignSelf: 'center',
+              paddingLeft: 15,
+              paddingRight: 15,
+            }}
+          />
+        </View>
         <TextInput
           style={styles.input}
           placeholder={'Password'}
@@ -173,5 +189,14 @@ const styles = StyleSheet.create({
     padding: 12,
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  DOB: {
+    borderColor: '#637381',
+    borderWidth: 1,
+    marginHorizontal: 10,
+    borderRadius: 7,
+    margin: 7,
+    paddingLeft: 10,
+    flexDirection: 'row',
   },
 });

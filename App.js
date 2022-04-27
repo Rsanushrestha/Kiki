@@ -15,13 +15,25 @@ import ForgetScreen from './src/components/Screens/ForgetPassword/ForgetScreen';
 import CodeScreen from './src/components/Screens/ForgetPassword/CodeScreen';
 import ChangeScreen from './src/components/Screens/ForgetPassword/ChangeScreen';
 import CongScreen from './src/components/Screens/ForgetPassword/CongScreen';
+import SplashScreen from './src/components/Screens/SplashScreen/SplashScreen';
+import OnbordingScreen from './src/components/Screens/Onbording/OnbordingScreen';
 
 const Stack = createNativeStackNavigator();
 
 const App = ({navigation}) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen
+          name="Splash"
+          component={SplashScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Onboard"
+          component={OnbordingScreen}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}

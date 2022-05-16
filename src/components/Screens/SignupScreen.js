@@ -54,6 +54,7 @@ const SignupScreen = props => {
             placeholderTextColor="white"
             fontFamily="Public Sans"
             color="white"
+            // options={{format: 'DD-MM-YYYY'}}
             // inlineImageLeft="calendar"
           />
           <Icon
@@ -150,6 +151,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 6,
+    padding: 10,
   },
   horizontal: {
     flexDirection: 'row',
@@ -161,6 +163,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     margin: 7,
     width: 80,
+    padding: 8,
   },
   number: {
     borderColor: '#637381',
@@ -169,6 +172,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     margin: 7,
     width: 240,
+    padding: 8,
   },
   help: {
     color: 'white',

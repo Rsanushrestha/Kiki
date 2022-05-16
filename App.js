@@ -17,13 +17,20 @@ import ChangeScreen from './src/components/Screens/ForgetPassword/ChangeScreen';
 import CongScreen from './src/components/Screens/ForgetPassword/CongScreen';
 import SplashScreen from './src/components/Screens/SplashScreen/SplashScreen';
 import OnbordingScreen from './src/components/Screens/Onbording/OnbordingScreen';
+import DashBoard from './src/components/Dashbord/DashBoard';
+import Icons from './src/components/Dashbord/Icons';
 
 const Stack = createNativeStackNavigator();
 
 const App = ({navigation}) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator
+        initialRouteName="Splash"
+        screenOptions={{
+          headerStyle: {backgroundColor: '#000E28'},
+          headerTintColor: 'white',
+        }}>
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -94,6 +101,20 @@ const App = ({navigation}) => {
           name="Cong"
           component={CongScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Dashboard"
+          component={DashBoard}
+          // options={{headerShown: false}}
+          options={{
+            title: 'Dashboard',
+
+            headerBackVisible: false,
+            headerStyle: {
+              backgroundColor: '#000E28',
+            },
+            headerRight: () => <Icons />,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

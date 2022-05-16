@@ -25,8 +25,8 @@ const LocationScreen = props => {
             color: 'white',
             padding: 20,
           }}></Icons>
-        <Text style={{color: '#00AB55', left: 18}}>Step 1/4</Text>
       </TouchableOpacity>
+      <Text style={{color: '#00AB55', left: 18}}>Step 1/4</Text>
       <Text style={styles.login}>Select your {'\n'}Location</Text>
       <Text style={styles.txt}>
         Let us know where you are {'\n'}located,so we can customize {'\n'}events

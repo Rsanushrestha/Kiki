@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 7,
+    padding: 10,
   },
 });
 export default ForgetScreen;

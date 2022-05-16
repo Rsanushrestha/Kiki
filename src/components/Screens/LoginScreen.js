@@ -48,13 +48,16 @@ const LoginScreen = props => {
           color="white"
         />
       </View>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Forget')}>
-        <Text style={styles.forget}>Forget Password?</Text>
-      </TouchableOpacity>
+      <View style={styles.touch}>
+        <TouchableOpacity onPress={() => navigation.navigate('Forget')}>
+          <Text style={styles.forget}>Forget Password?</Text>
+        </TouchableOpacity>
+      </View>
 
       <View>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => navigation.navigate('Dashboard')}>
           <Text
             style={{
               fontSize: 15,
@@ -98,21 +101,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Prompt',
     color: 'white',
     lineHeight: 30,
-    height: 55,
+    height: 60,
     margin: 15,
   },
   forget: {
     fontFamily: 'Public Sans',
     fontSize: 18,
     borderBottomColor: '#00AB55',
-
-    alignSelf: 'flex-end',
-
     borderBottomWidth: 1,
     color: '#00AB55',
-    height: 25,
+    // height: 25,
+
     // textAlign: 'right',
-    margin: 15,
+    margin: 10,
   },
   btn: {
     backgroundColor: '#00AB55',
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
     color: '#00AB55',
     borderBottomColor: '#00AB55',
     borderBottomWidth: 1,
+    left: 10,
   },
   footer: {
     flexDirection: 'row',
@@ -143,6 +145,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 7,
+    padding: 10,
+  },
+  touch: {
+    alignItems: 'flex-end',
+    height: 50,
+    width: 350,
   },
 });
 

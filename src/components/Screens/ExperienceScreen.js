@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 7,
     margin: 12,
+    padding: 10,
   },
 });
 export default LocationScreen;

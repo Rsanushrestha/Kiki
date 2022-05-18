@@ -21,12 +21,15 @@ const CircularBar = () => {
               value={85}
               titleColor="#222"
               valueSuffix={'%'}
-              inActiveStrokeColor={'#2ecc71'}
+              activeStrokeColor={'#00AB55'}
               inActiveStrokeOpacity={0.2}
+              inActiveStrokeWidth={4}
+              fontSize={20}
+              activeStrokeWidth={6}
             />
           </View>
           <Text style={styles.text}>
-            0%{'\n'}
+            85%{'\n'}
             Tickets sold
           </Text>
           <Icon
@@ -55,15 +58,18 @@ const CircularBar = () => {
             <CircularProgress
               radius={30}
               value={85}
-              titleColor="#222"
+              titleColor="#FFC107"
               valueSuffix={'%'}
-              inActiveStrokeColor={'#2ecc71'}
+              activeStrokeColor={'#FFC107'}
               inActiveStrokeOpacity={0.2}
+              inActiveStrokeWidth={4}
+              fontSize={20}
+              activeStrokeWidth={6}
             />
           </View>
           <Text style={styles.text}>
             {' '}
-            $0{'\n'}
+            $3,566{'\n'}
             Gross income
           </Text>
           <Icon
@@ -92,14 +98,17 @@ const CircularBar = () => {
             <CircularProgress
               radius={30}
               value={85}
-              titleColor="#222"
+              titleColor="#B066ED"
               valueSuffix={'%'}
-              inActiveStrokeColor={'#2ecc71'}
+              activeStrokeColor={'#B066ED'}
+              inActiveStrokeColor={'#B066ED'}
               inActiveStrokeOpacity={0.2}
+              inActiveStrokeWidth={4.5}
+              activeStrokeWidth={6}
             />
           </View>
           <Text style={styles.text}>
-            $0{'\n'}
+            $2,894{'\n'}
             Net income
           </Text>
           <Icon
@@ -142,7 +151,9 @@ const styles = StyleSheet.create({
     // opacity: 0.5,
     color: '#222D65',
   },
-  //   circle: {},
+  circle: {
+    top: 2,
+  },
 });
 
 export default CircularBar;
